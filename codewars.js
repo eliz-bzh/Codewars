@@ -1,24 +1,24 @@
 //Power
 function numberToPower(number, power){
-  let res = 1;
-  for(let i = 0; i!= power; ++i){
-    res *= number;
-  }
-  return res;
+	let res = 1;
+	for(let i = 0; i!= power; ++i){
+		res *= number;
+	}
+	return res;
 }
 
 
 //Calculate BMI
 function bmi(weight, height) {
-  let bmi = weight / Math.pow(height,2);
-  if(bmi <= 18.5){
-    return "Underweight";
-  }else if(bmi <= 25){
-    return "Normal";
-  }else if(bmi <= 30){
-    return "Overweight";
-  }
-    return "Obese";
+	let bmi = weight / Math.pow(height,2);
+	if(bmi <= 18.5){
+		return "Underweight";
+	}else if(bmi <= 25){
+		return "Normal";
+	}else if(bmi <= 30){
+		return "Overweight";
+	}
+	return "Obese";
 }
 
 //Break camelCase
@@ -36,25 +36,25 @@ function solution(string) {
 
 //Numericals of a String
 function numericals(s){
-  let obj = [];
-  let finalStr = '';
-  for ( let i = 0; i < s.length; i++){
-       let elem = s[i];
+	let obj = [];
+	let finalStr = '';
+	for ( let i = 0; i < s.length; i++){
+		let elem = s[i];
 
-       if (!obj[elem] ) {
-         obj[elem] = 1;
-       } 
-       else {
-          obj[elem] +=1;
-       }
-       finalStr += obj[elem];  
-  }
-     return finalStr;
+		if (!obj[elem] ) {
+			obj[elem] = 1;
+		} 
+		else {
+			obj[elem] +=1;
+		}
+		finalStr += obj[elem];  
+	}
+	return finalStr;
 }
 
 //get character from ASCII Value
 function getChar(c){
-  return String.fromCharCode(c);
+	return String.fromCharCode(c);
 }
 
 //Sum of Cubes
@@ -68,26 +68,26 @@ function sumCubes(n){
 
 //Square(n) Sum
 function squareSum(numbers){
-  let res = 0;
-  for(let i = 0; i != numbers.length; ++i){
-    res += Math.pow(numbers[i], 2);
-  }
-  return res;
+	let res = 0;
+	for(let i = 0; i != numbers.length; ++i){
+		res += Math.pow(numbers[i], 2);
+	}
+	return res;
 }
 
 //Simple Fun #74: Growing Plant
 function growingPlant(upSpeed, downSpeed, desiredHeight) {  
-  var i = 1;
-  for (var height = upSpeed; height < desiredHeight; height = height + upSpeed){
-    height = height - downSpeed;
-    i++;   
-  }
-  return i;
+	var i = 1;
+	for (var height = upSpeed; height < desiredHeight; height = height + upSpeed){
+		height = height - downSpeed;
+		i++;   
+	}
+	return i;
 }
 
 //Multiple of index
 function multipleOfIndex(array) {
-  let res = [];
+	let res = [];
 	for(let i = 0, j = 1; j != array.length; ++j){
 		if(array[j] % j === 0){
 			res[i] = array[j];
@@ -103,7 +103,7 @@ function multipleOfIndex2(array) {
 
 //MinMinMax
 function minMinMax(array) {
-  for(let i = Math.min(...array) + 1; i != Math.max(...array); ++i){
+	for(let i = Math.min(...array) + 1; i != Math.max(...array); ++i){
 		if(!array.includes(i)){
 			return [Math.min(...array), i , Math.max(...array)];	
 		}
@@ -118,12 +118,12 @@ function stringToArray(string){
 
 //Simple validation of a username with regex
 function validateUsr(username) {
-  return /^[0-9a-z_]{4,16}$/.test(username);
+	return /^[0-9a-z_]{4,16}$/.test(username);
 }
 
 //Adding Big Numbers
 function add(a, b) {
-if(Number.isSafeInteger(Number(a)) && Number.isSafeInteger(Number(b))){
+	if(Number.isSafeInteger(Number(a)) && Number.isSafeInteger(Number(b))){
 		return (Number(a) + Number(b)).toString();
 	}
 	
@@ -143,8 +143,8 @@ if(Number.isSafeInteger(Number(a)) && Number.isSafeInteger(Number(b))){
 	}
 	
 	if(sum >= 10){
-    result.unshift(1);
-  }
+		result.unshift(1);
+	}
 	return result.join("");
 }
 
