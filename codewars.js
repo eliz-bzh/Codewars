@@ -193,8 +193,60 @@ var Calculator = {
 };
 */
 
+//Regex Password Validation
+function validate(password) {
+	return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z0-9]{6,}$/.test(password);
+}
 
+//Sum of differences in array
+const sumOfDifferences =arr=>
+arr.sort((a,b)=>b-a).reduce((total, number, index, array)=>
+	index+1 < array.length ? total + number - array[index+1] : total, 0
+	);
+/*
+function sumOfDifferences(arr) {
+    return arr.length > 1 ? Math.max(...arr) - Math.min(...arr) : 0;
+}*/
+
+//Sum of Array Averages
+/*const sumAverage = array => 
+array.reduce((value, arr) => 
+	value += arr.reduce((sum, el) => 
+		sum += el, 0)/arr.length, 0).toFixed(0);
+		*/
+
+		const sumAverage = arr => {
+			return Math.floor(
+				arr.map(arr => arr.reduce((a, b) => a + b) / arr.length)
+				.reduce((a, b) => a + b)
+				);
+		}
+
+//Minimize Sum Of Array (Array Series #1)
+/*function minSum(arr) {
+	const sorted=arr.sort((a,b)=>a-b)
+	let sum=0;
+	for (let i=0;i<arr.length/2;i++){
+		sum+=sorted[i]*sorted[sorted.length-1-i]
+	}
+	return sum;
+}*/
+
+const minSum = arr =>
+arr.sort((a,b) => a-b )
+	.slice(0, arr.length/2)
+		.reduce((total,elem,index) => total += elem * arr[arr.length - index - 1 ], 0);
+
+
+
+
+
+console.log(minSum([12,6,10,26,3,24]));
+
+/*console.log(sumAverage([[3, 4, 1, 3, 5, 1, 4],[21, 54, 33, 21, 77]]));
+console.log(sumAverage([[-4, 3, -8, -2], [2, 9, 1, -5], [-7, -2, -6, -4]]));
 console.log(Calculator.subtract(3,5));
 console.log(Calculator.add(1,4));
 console.log(Calculator.multiply(4,5));
 console.log(Calculator.divide(7,0));
+*/
